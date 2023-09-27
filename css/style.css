@@ -10,14 +10,20 @@ body {
     background: #CCC;
     font-family: 'Poppins', sans-serif;
 }
-.nav-top {
-    padding: 2rem;
-    background: #fff;
-    display: flex;
-    align-items: center;
+ul {
+    list-style-type: none;
 }
 a{
     text-decoration: none;
+}
+
+/*========================== HEADER ============================*/
+.nav-header {
+    height: 100px;
+    padding: 0 2rem;
+    background: #fff;
+    display: flex;
+    align-items: center;
 }
 /*logo*/
 .logo {
@@ -80,4 +86,64 @@ a{
 }
 .nav-top-link a{
     color: #74757f;
+}
+.links-container {
+    background: rgba(116, 117, 127, 0.16);
+    padding: 1rem 2rem;
+}
+.nav-links {
+    display: flex;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+.links-container a {
+    color: #FFF;
+}
+@media (max-width:768px) {
+    .nav {
+        position: fixed;
+        width: 100%;
+    }
+    .nav-top-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        flex-direction: column;
+        justify-content: start;
+        align-items: flex-start;
+        background-color: #FFF;
+        padding: 2rem;
+        border-bottom-left-radius: 5px;
+        right: 0;
+    }
+    .links-container {
+        padding: 0;
+        height: calc(100vh - 100px);
+        background-color: #fff;
+        width: 50%;
+        display: none;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+    }
+    .links-container li {
+        display: block;
+        padding: 1.5rem 2rem;
+        background: #FFF;
+        width: 100%;
+        transition: hover 400ms ease;
+    }
+    .links-container li a{
+        color: #151515;
+    }
+    .links-container li:hover{
+        color: #FFF;
+        background: #007bff;
+    }
+    .links-container li:hover a{
+        color: #FFF;
+    }
+
 }
