@@ -1,0 +1,244 @@
+commit 0fc0f175d4fcded0200cdcc3f9955f90e6fa9cdf
+Author: hisamuddin01 <hisamuddin357545@gmail.com>
+Date:   Wed Sep 27 20:06:21 2023 +0530
+
+    navbar functionallity added
+
+diff --git a/app.js b/app.js
+index e69de29..f8fe9e4 100644
+--- a/app.js
++++ b/app.js
+@@ -0,0 +1,27 @@
++const menuBtn = document.querySelector('.toggle-menu');
++const linksContainer = document.querySelector('.links-container');
++const links = document.querySelector('.nav-links');
++
++const toggleMenuEllipsis = document.querySelector('.toggle-menu-ellipsis');
++const topLinksContainer = document.querySelector(".top-links-container")
++const topLinks = document.querySelector(".top-links")
++
++menuBtn.addEventListener("click", function () {
++    // const linksHeight = links.getBoundingClientRect().height;
++    const containerHeight = linksContainer.getBoundingClientRect().height;
++    if(containerHeight === 0) {
++        linksContainer.style.height = `calc(100vh - 60px)`
++    }
++    else {
++        linksContainer.style.height = 0;
++    }
++});
++toggleMenuEllipsis.addEventListener("click" , function () {
++    const topLinksHeight = topLinks.getBoundingClientRect().height;
++    const topLinksContainerHeight = topLinksContainer.getBoundingClientRect().height;
++    if(topLinksContainerHeight === 0) {
++        topLinksContainer.style.height = `${topLinksHeight}px`;
++    }else {
++        topLinksContainer.style.height = 0;
++    }
++});
+\ No newline at end of file
+diff --git a/css/style.css b/css/style.css
+index 938683f..dcdae35 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -25,6 +25,10 @@ a{
+     display: flex;
+     align-items: center;
+ }
++.toggle-menu,
++.toggle-menu-ellipsis {
++    display: none;
++}
+ /*logo*/
+ .logo {
+     flex: 3;
+@@ -39,23 +43,24 @@ a{
+ .logo h1 span {
+     font-weight: 900;
+ }
+-.nav-top-links {
++/*top-links*/
++.top-links-container {
+     flex: 9;
++}
++.top-links {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+-    gap: 3rem;
+ }
+-.nav-top-links article {
++.top-link {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+ }
+-.nav-top-link span {
++.top-link span {
+     display: block;
+     color: #74757f;
+ }
+-
+ .link-icon {
+     color: #151515;
+     font-size: 1.1rem;
+@@ -87,12 +92,12 @@ a{
+ .nav-top-link a{
+     color: #74757f;
+ }
++/*nav-links*/
+ .links-container {
+     background: rgba(116, 117, 127, 0.16);
+     padding: 1rem 2rem;
+ }
+ .nav-links {
+-    display: flex;
+     display: flex;
+     align-items: center;
+     gap: 5rem;
+@@ -101,28 +106,40 @@ a{
+     color: #FFF;
+ }
+ @media (max-width:768px) {
++    .nav-header {
++        height: 60px;
++    }
++    .logo  {
++        font-size: 1rem;
++    }
+     .nav {
+         position: fixed;
+         width: 100%;
+     }
+-    .nav-top-links {
+-        display: none;
++    .top-links-container {
+         position: absolute;
+         top: 100%;
+-        flex-direction: column;
+-        justify-content: start;
+-        align-items: flex-start;
+-        background-color: #FFF;
+-        padding: 2rem;
++        background: #FFF;
+         border-bottom-left-radius: 5px;
+         right: 0;
++        height: 0;
++        overflow: hidden;
++    }
++    .top-links {
++        background: #FFF;
++        flex-direction: column;
++        align-items: flex-start;
++        gap: 2rem;
++        padding: 2.5rem;
+     }
+     .links-container {
+         padding: 0;
+-        height: calc(100vh - 100px);
++        /* height: calc(100vh - 60px); */
+         background-color: #fff;
+         width: 50%;
+-        display: none;
++        height: 0;
++        overflow: hidden;
++        transition: all 400ms ease;
+     }
+     .nav-links {
+         flex-direction: column;
+@@ -145,5 +162,16 @@ a{
+     .links-container li:hover a{
+         color: #FFF;
+     }
+-
++    /*--toggle-btn--*/
++    .toggle-menu,
++    .toggle-menu-ellipsis {
++        display: block;
++        color: #151515;
++        border: none;
++        font-size: 1.2rem;
++        background: transparent;
++    }
++    .toggle-menu {
++        margin-right: 16px;
++    }
+ }
+\ No newline at end of file
+diff --git a/index.html b/index.html
+index 88bad27..7e1fba7 100644
+--- a/index.html
++++ b/index.html
+@@ -22,32 +22,57 @@
+                 </a>
+                 <button class="toggle-menu-ellipsis"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                 <!-- CONTACT DETAILS -->
+-                <div class="nav-top-links">
+-                    <article>
++                <div class="top-links-container">
++                    <ul class="top-links">
++                        <li class="top-link">
++                            <a href="#" class="link-icon"><i class="fa-solid fa-phone"></i></a>
++                            <div class="nav-top-link">
++                                <a href="#"><span>11-000-0000-0000</span></a>
++                                <a href="#"><span>11-000-0000-0000</span></a>
++                            </div>
++                        </li>
++                        <li class="top-link">
++                            <a href="#" class="link-icon"><i class="fa-solid fa-location-dot"></i></a>
++                            <div class="nav-top-link">
++                                <a href="#">2130 Fulton Street <br> San Diego, CA 94117-1080</a>
++                            </div>
++                        </li>
++                        <li class="top-link">
++                            <a href="#" class="btn btn-outline">Request a call</a>
++                        </li>
++                    </ul>
++                </div>
++                <!-- <div class="nav-top-links top-links-container">
++                    <article class="top-links">
+                         <a href="#" class="link-icon"><i class="fa-solid fa-phone"></i></a>
+                         <div class="nav-top-link">
+                             <a href="#"><span>11-000-0000-0000</span></a>
+                             <a href="#"><span>11-000-0000-0000</span></a>
+                         </div>
+                     </article>
+-                    <article>
+-                        <a href="#" class="link-icon"><i class="fa-solid fa-location-dot"></i></a>
+-                        <div class="nav-top-link">
+-                            <a href="#">2130 Fulton Street <br> San Diego, CA 94117-1080</a>
+-                        </div>
+-                    </article>
+-                    <a href="#" class="btn btn-outline">Request a call</a>
+-                </div>
++                    <article class="top-links">
++                       
++                    </article class="top-links">
++                </div> -->
+             </div>
+             <div class="links-container">
+                 <ul class="nav-links">
+-                    <li class="nav-link"><a href="#">Home</a></li>
+-                    <li class="nav-link"><a href="#">About us</a></li>
+-                    <li class="nav-link"><a href="#">Rent</a></li>
+-                    <li class="nav-link"><a href="#">Contacts</a></li>
++                    <li class="nav-link">
++                        <a href="#">Home</a>
++                    </li>
++                    <li class="nav-link">
++                        <a href="#">About us</a>
++                    </li>
++                    <li class="nav-link">
++                        <a href="#">Rent</a>
++                    </li>
++                    <li class="nav-link">
++                        <a href="#">Contacts</a>
++                    </li>
+                 </ul>
+             </div>
+         </nav>
+     </header>
++    <script src="app.js"></script>
+ </body>
+ </html>
+\ No newline at end of file
