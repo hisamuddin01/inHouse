@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;900&display=swap');
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #CCC;
+    font-family: 'Poppins', sans-serif;
+}
+.nav-top {
+    padding: 2rem;
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+/*logo*/
+.logo {
+    flex: 3;
+    color: #151515;
+    position: relative;
+    font-size: 1.4rem;
+}
+.logo h1 {
+    font-weight: 300;
+    letter-spacing: 1.1px;
+}
+.logo h1 span {
+    font-weight: 900;
+}
+.nav-top-links {
+    flex: 9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+.nav-top-links article {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.nav-top-link span {
+    display: block;
+    color: #74757f;
+}
+
+.link-icon {
+    color: #151515;
+    font-size: 1.1rem;
+    border: 1px solid #CCC;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.btn {
+    color: #151515;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1.1px;
+    font-weight: 400;
+    border: 1px solid #74757f;
+    padding: .8rem 2.2rem;
+    border-radius: 4px;
+    transition: all 400ms ease-in-out;
+}
+.btn:hover {
+    color: #FFF;
+    background-color: #007bff;
+    border-color: #007bff;
+    animation: shake 400ms ;
+}
+.nav-top-link a{
+    color: #74757f;
+}
