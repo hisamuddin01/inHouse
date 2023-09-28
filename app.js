@@ -32,4 +32,36 @@ window.addEventListener('scroll' , () => {
     }else {
         linksContainer.classList.remove('fixed-link-container');
     }
-});
+})
+
+
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const buttons = document.querySelectorAll('.slide-btn');
+let timeout;
+
+function showSlide() {
+    slides.forEach( function(slide) {
+        slide.classList.toggle('active', false);
+    });
+    buttons.forEach( function(button) {
+        button.classList.toggle('slide-btn-active', false);
+    });
+    slides[slideIndex].classList.toggle('active', true);
+    buttons[slideIndex].classList.toggle('slide-btn-active', true);
+    slideIndex = (slideIndex + 1) % slides.length;
+    clearTimeout(timeout);
+    timeout = setInterval(showSlide, 3000)
+}
+
+function goToSlide(index) {
+    slideIndex = index;
+    showSlide
+}
+
+buttons.forEach( function(button, index) {
+    button.addEventListener('click', function() {
+        goToSlide(index);
+    })
+})
+showSlide();
