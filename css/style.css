@@ -26,6 +26,12 @@ p {
     letter-spacing: 1.1px;
     line-height: 1.5;
 }
+.container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: auto;
+}
 .btn {
     display: inline-block; 
     font-size: 14px;
@@ -237,14 +243,15 @@ p {
         width: 70%;
     }
 }
-/* .image-slider {
+/*========================== HERO SECTION ============================*/
+/*slides*/
+.image-slider {
     position: relative;
-} */
+}
 .slide {
     position: relative;
     width: 100%;
-    height: 100vh;
-    padding: 2rem;
+    padding: 11rem 0;
     overflow: hidden;
 }
 .slide-1 {
@@ -262,12 +269,16 @@ p {
     background: url(../images/slide-img-3.jpg);
     background-size: cover;
 }
+.active {
+    display: block;
+}
+/*slide btns*/
 .slide-btns {
     display: flex;
     gap: 2rem;
-    position: relative;
-    top: -2.7rem;
-    left: 2rem;
+    position: absolute;
+    bottom: 1rem;
+    left: calc(5% + 15px);
 }
 .slide-btn {
     color: #FFF;
@@ -288,8 +299,8 @@ p {
 .slide-btn:hover {
     color: #f2f2f2; 
 }
+/*Hero text*/
 .sub-heading {
-    margin-top: 5rem;
     position: relative;
     color: #FFF;
     text-transform: uppercase;
@@ -316,9 +327,69 @@ p {
     letter-spacing: 1.2px;
     margin-bottom: 1rem;
 }
+.slide-content p {
+    max-width: 80%;
+}
 .slide p {
     color: #FFF;
 }
-.active {
-    display: block;
+/*Media qurey for the Hero section*/
+@media (max-width:992px) {
+    .slide {
+        padding: 7rem 0;
+    }
+    .container {
+        max-width: 768px;
+    }
+    .slide-btns {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .sub-heading {
+        font-size: 1.8rem;
+        left: calc(60px + 8px);
+    }
+    .sub-heading::before {
+        width: 60px;
+        height: 3px;
+        left: calc(-60px - 8px);
+    }
+    .heading {
+        font-size: 2.8rem;
+    }
+}
+@media (max-width:768px) {
+    .container {
+        max-width: 540px;
+        padding: 10px;
+    }
+    .sub-heading {
+        font-size: 1.5rem;
+    }
+    .heading {
+        font-size: 2.2rem;
+    }
+    .slide-content p {
+        max-width: 90%;
+    }
+}
+@media (max-width:540px) {
+    .container {
+        padding: 8px;
+    }
+    .sub-heading {
+        font-size: 1.3rem;
+        left: calc(30px + 3px);
+    }
+    .heading {
+        font-size: 2rem;
+    }
+    .sub-heading::before {
+        width: 30px;
+        height: 3px;
+        left: calc(-30px - 3px);
+    }
+    .slide-content p {
+        max-width: 100%;
+    }
 }
