@@ -25,3 +25,11 @@ toggleMenuEllipsis.addEventListener("click" , function () {
         topLinksContainer.style.height = 0;
     }
 });
+window.addEventListener('scroll' , () => {
+    const scrollHeight = window.pageYOffset;
+    if(scrollHeight > 80) {
+        linksContainer.classList.add('fixed-link-container');
+    }else {
+        linksContainer.classList.remove('fixed-link-container');
+    }
+});
