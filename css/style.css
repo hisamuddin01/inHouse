@@ -68,6 +68,11 @@ p {
     background: #333;
     border-color: #333;
 }
+@media (max-width: 768px) {
+    p {
+        font-size: 0.85rem;
+    }
+}
 
 /*========================== HEADER ============================*/
 .nav-header {
@@ -415,12 +420,12 @@ p {
     gap: 2rem;
 }
 .item img {
-    aspect-ratio: auto 571/353;
+    /* aspect-ratio: auto 571/353; */
     margin-bottom: 1.5rem;
 }
 .item-heading {
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 400;
 }
 .item-heading a{
@@ -443,16 +448,23 @@ p {
 .section-btn {
     text-align: center;
 }
+@media (max-width: 992px) {
+    .item-heading {
+        font-size: 1.1rem;
+    }
+}
 @media (max-width:768px) {
     .items {
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
+/*==========================  SECTION-1 ============================*/
 .section-center {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 2.5rem;
+    gap: 1.5rem;
 }
 .flex-box {
     display: flex;
@@ -464,7 +476,80 @@ p {
 }
 .box-content h4 {
     color: #151515;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 1rem;
+}
+
+@media (max-width: 992px) {
+    .box-content h4 {
+        font-size: 1.2rem;
+    }
+    .box-icon {
+        font-size: 1.55rem;
+    }
+}
+@media (max-width:768px) {
+    .section-center {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    .flex-box {
+        flex: 1;
+        min-width: 45%;
+    }
+    
+}
+@media (max-width:540px) {
+
+    .section-center {
+        flex-direction: column;
+        padding: 0 3rem;
+    }
+}
+
+/*==========================  CATOGORIES ============================*/
+h3 {
+    color: #151515;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1.2px;
+}
+#categories .container > p {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 3.1rem;
+}
+#categories .items {
+    grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width:992px) {
+    #categories .container > p {
+        width: 85%;
+    }
+}
+@media (max-width:768px) {
+    h3 {
+        font-size: 1.8rem;
+    }
+    #categories .items {
+        padding: 0 2rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width:540px) {
+    h3 {
+        font-size: 1.4rem;
+    }
+    #categories .container > p {
+        width: 100%;
+    }
+    #categories .items {
+        padding: 0 2.5rem;
+        grid-template-columns: 1fr;
+    }
 }
