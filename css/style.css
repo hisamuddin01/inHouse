@@ -669,3 +669,78 @@ h5 {
         min-width: 100%;
     }
 }
+/*========================== FOOTER ============================*/
+#footer {
+    background-color: #232426;
+    padding: 5rem 0 1rem 0;
+}
+.footer-wrapper {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.footer-wrapper > div {
+    flex: 1;
+}
+h6 {
+    color: #FFF;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    margin-bottom: 1.5rem;
+}
+.footer-top span {
+    display: block;
+    color: #777;
+    font-size: 14px;
+    text-transform: capitalize;
+    letter-spacing: 1.1px;
+    margin-bottom: 1.2rem;
+}
+.footer-top p strong {
+    font-size: 14px;
+    color: #FFF;
+    font-weight: 400;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+.footer-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.footer-nav-links,
+.footer-nav-links-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+.footer-nav-links-icons {
+    width: 100%;
+    justify-content:flex-end;   
+}
+.footer-nav-links a,
+.footer-nav-links-icons a{
+    color: #FFF;
+}
+hr {
+    color: #FFF;
+    border: 0;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    border-top: 1px solid #e8e9ee;
+}
+.site-footer .wrapper{
+    display: flex;
+}
+.site-footer .logo h1{
+    color: #777;
+}
+.site-footer p{
+    margin-bottom: 0;
+}
