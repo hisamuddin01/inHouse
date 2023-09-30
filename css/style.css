@@ -22,10 +22,11 @@ a{
 }
 p {
     color: #777;
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: 300;
     letter-spacing: 1.1px;
-    line-height: 1.5;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
 }
 .container {
     width: 95%;
@@ -208,9 +209,11 @@ p {
         padding: 2.5rem;
     }
     .links-container {
+        position: absolute;
         padding: 0;
-        /* height: calc(100vh - 60px); */
+        height: calc(100vh - 60px);
         background-color: #fff;
+        top: 60px;
         width: 60%;
         height: 0;
         overflow: hidden;
@@ -440,11 +443,6 @@ p {
 .item ul {
     margin-bottom: 0.5rem;
 }
-.item p {
-    color: #74757f;
-    font-size: 16px;
-    margin-bottom: 1rem;
-}
 .section-btn {
     text-align: center;
 }
@@ -512,9 +510,9 @@ p {
 h3 {
     color: #151515;
     font-size: 2.3rem;
-    text-transform: uppercase;
     font-weight: 400;
     text-align: center;
+    text-transform: uppercase;
     margin-bottom: 1.5rem;
     letter-spacing: 1.2px;
 }
@@ -550,6 +548,34 @@ h3 {
     }
     #categories .items {
         padding: 0 2.5rem;
+        grid-template-columns: 1fr;
+    }
+}
+/*==========================  OUR TEAM ============================*/
+.section-center .flex-box {
+   align-items: flex-start;
+   justify-content: flex-start;
+}
+ .flex-box img{
+   aspect-ratio: auto 270 / 273;
+}
+h5 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+.box-content a {
+    color: #151515;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+.box-content a span {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+@media (max-width:992px) {
+    #our-team .items {
         grid-template-columns: 1fr;
     }
 }
