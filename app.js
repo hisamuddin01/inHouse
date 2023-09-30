@@ -36,6 +36,50 @@ const item = [
         desc : "A luxury mansion for people who enjoy the high-end amenities."
     }
 ]
+const quote = [
+   {
+    id : 1,
+    img : "./images/testimonials-person-1-96x96.jpg",
+    title : "Kelly McMillan",
+    subTitle : "Regular Customer",
+    desc : "I have recently sold my rental property in Nelson via inHouse. Everything about the sale was made seamless by your team. You gave me great advice about what was necessary to expedite the sale."
+   },
+   {
+    id : 2,
+    img : "./images/testimonials-person-2-96x96.jpg",
+    title : "Harold Barnett",
+    subTitle : "Regular Customer",
+    desc : "I really appreciate your time and expertise in helping me find and buy my current home in Seattle, WA. Hope we can do business again in the future and I will recommend you to family and friends."
+   },
+   {
+    id : 3,
+    img : "./images/testimonials-person-3-96x96.jpg",
+    title : "Bill Warner",
+    subTitle : "Regular Customer",
+    desc : "I have just sold a property with inHouse and I can’t thank them enough. Their team has great communication skills and they have regularly communicated with me throughout the whole process."
+   },
+   {
+    id : 4,
+    img : "./images/testimonials-person-4-96x96.jpg",
+    title : "Ann Lee",
+    subTitle : "Regular Customer",
+    desc : "Your skilled team helped me make the dream of selling my old property a reality. The sale went smoothly, and I just closed on an ideal new place I am excited to call home. Thank you for your great services!"
+   },
+   {
+    id : 5,
+    img : "./images/testimonials-person-5-96x96.jpg",
+    title : "Peter Clarkson",
+    subTitle : "Regular Customer",
+    desc : "I have to say that inHouse has the best brokers we've ever worked with. Their professionalism, personality, attention to detail, responsiveness and ability to close the deal are outstanding!"
+   },
+   {
+    id : 6,
+    img : "./images/testimonials-person-6-96x96.jpg",
+    title : "Albert Webb",
+    subTitle : "Regular Customer",
+    desc : "I have just bought an apartment in LA thanks to you and your brokers. Everything went smooth and easy, the price was quite affordable, and I’m sure I will use your services again in the future."
+   }
+]
 const menuBtn = document.querySelector('.toggle-menu');
 const linksContainer = document.querySelector('.links-container');
 const links = document.querySelector('.nav-links');
@@ -109,8 +153,11 @@ showSlide();
 //parent element
 const itemsContainer = document.querySelector(".items");
 
+const quoteContainer = document.querySelector(".testimoials-container")
+
 window.addEventListener("DOMContentLoaded", function() {
     displayItems(item);
+    displayQuotes(quote);
 })
 
 function displayItems(items) {
@@ -128,4 +175,22 @@ function displayItems(items) {
     });
     displayItem = displayItem.join("")
     itemsContainer.innerHTML = displayItem;
+}
+function displayQuotes(quotes) {
+    let displayQuote = quotes.map(function(q) {
+        return ` <article class="quote">
+        <figure class="quote-profile">
+            <img src=${q.img} class="img" alt=${q.tittle}>
+            <figcaption>
+                <h5>${q.title}</h5>
+                <p>${q.subTittle}</p>
+            </figcaption>
+        </figure>
+        <div class="quote-info">
+            <p>${q.desc}</p>
+        </div>
+    </article>`
+    })
+    displayQuote = displayQuote.join("");
+    quoteContainer.innerHTML = displayQuote;
 }
