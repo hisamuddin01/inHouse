@@ -26,7 +26,7 @@
     --BORDER-RADIUS-MD : 0.5rem;
     --BORDER-RADIUS-LG : 100%;
     /*FONT SPACING*/
-    --SPACING-SM : 0.1rem;
+    --SPACING-SM : 0.08rem;
     --SPACING-LG : 0.3rem;
     /*FONT-WEIGHT*/
     --FONT-LIGHT : 300;
@@ -34,10 +34,10 @@
     --FONT-SEMI-BOLD : 600;
     --FONT-BOLD : 900;
     /*OTHER*/
-    --FONT-FAMILY : var(font-family: 'Poppins', sans-serif;);
+    --FONT-FAMILY : 'Poppins', sans-serif;
     --TRANSITION : all 300ms ease-in;
     --MAX-WIDTH : 1250px;
-    --LINE-HEIGHT : 1.8;
+    --LINE-HEIGHT : 1.5;
     --BORDER : 1px solid var(--COLOR-GRAY);
 }
 /*========================== GLOBAL STYLES ============================*/
@@ -97,16 +97,11 @@ h5 {
 }
 h6 {
     color:var(--COLOR-WHITE);
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 1.1px;
     margin-bottom: 1.5rem;
-}
-ul {
-    list-style-type: none;
-}
-a{
-    text-decoration: none;
+    letter-spacing: var(--SPACING-SM);
 }
 p {
     color: var(--COLOR-GRAY);
@@ -114,6 +109,13 @@ p {
     font-weight: var(--FONT-LIGHT);
     letter-spacing: var(--SPACING-SM);
     line-height: var(--LINE-HEIGHT);
+    margin-bottom: 0.5rem;
+}
+a{
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
 }
 .container {
     width: 95%;
@@ -734,71 +736,99 @@ p {
     }
 }
 /*========================== FOOTER ============================*/
-#footer {
+.footer {
     background-color: var(--BG-DARK-GRAY);
-    padding: 5rem 0 1rem 0;
 }
-.footer-wrapper {
-    display: flex;
-    gap: 2rem;
+.footer-main {
+    padding-top: 5rem;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
     margin-bottom: 2rem;
 }
-.footer-wrapper > div {
-    flex: 1;
+.col {
+    grid-column: span 2;
 }
-
-.footer-top span {
-    display: block;
-    color: var(--COLOR-GRAY);
-    font-size: 14px;
-    text-transform: capitalize;
-    letter-spacing: var(--SPACING-SM);
-    margin-bottom: 1.2rem;
+.inline-title {
+    margin-bottom: 0.5rem;
 }
-.footer-top p strong {
-    font-size: 0.875rem;
+.inline-title a {
     color: var(--COLOR-WHITE);
-    font-weight: var(--FONT-REGULAR);
 }
 .gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    gap: 0.5rem;
 }
-.footer-nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-.footer-nav-links,
-.footer-nav-links-icons {
-    display: flex;
-    justify-content: center;
-    gap: 2.5rem;
-}
-.footer-nav-links-icons {
-    width: 100%;
-    justify-content:flex-end;   
-}
-.footer-nav-links a,
-.footer-nav-links-icons a{
-    color: var(--COLOR-WHITE);
-}
+
 hr {
     color: var(--COLOR-WHITE);
     border: 0;
     margin-top: 0;
-    margin-bottom: 2rem;
     border-top: 1px solid var(--COLOR-WHITE);
 }
-.site-footer .wrapper{
+.footer-nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
 }
-.site-footer .logo h1{
+.footer-nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+.footer-nav ul li a{
     color: var(--COLOR-GRAY);
 }
-.site-footer p{
-    margin-bottom: 0;
+@media (max-width:992px) {
+    .wrapper {
+        row-gap: 2rem;
+    }
+    .col {
+        grid-column: span 3;
+    }
+    .col-1 {
+        grid-column: span 6;
+    }
+}
+@media (max-width:768px) {
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+    .footer-nav {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 0    ;
+    }
+}
+@media (max-width:540px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+    .col {
+        grid-column: span 1;
+    }
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+/*site-footer */
+.site-footer-wrapper {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-logo {
+    color: var(--COLOR-GRAY);
+}
+@media (max-width:768px) { 
+    .site-footer-wrapper {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
