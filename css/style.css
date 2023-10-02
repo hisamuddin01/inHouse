@@ -736,6 +736,38 @@ ul {
         min-width: 100%;
     }
 }
+/*========================== ABOUT-HERO ============================*/
+.about-hero {
+    overflow: hidden;
+    background: url(../images/breadcrumbs-image-1.jpg);
+    background-size: cover;
+}
+.about-title {
+    color: var(--COLOR-GRAY);
+    font-size: 1.1rem;
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: 3rem;
+    position: relative;
+    left: calc(30px + 6px);
+}
+.about-title::before {
+    content: '';
+    width: 30px;
+    height: 2px;
+    background-color: var(--COLOR-GRAY);
+    position: absolute;
+    left: calc(-30px - 6px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+.title {
+    font-size: 2rem;
+    color: var(--COLOR-WHITE);
+    text-transform: uppercase;
+    font-weight: var(--FONT-REGULAR);
+    margin-bottom: 2rem;
+}
 /*========================== CAREER ============================*/
 .career-wrapper {
     display: flex;
