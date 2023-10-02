@@ -736,12 +736,45 @@ ul {
         min-width: 100%;
     }
 }
-
+/*========================== CAREER ============================*/
+.career-wrapper {
+    display: flex;
+    gap: 3rem;
+}
+.career-wrapper > div {
+    flex: 1;
+}
+.career-wrapper .career-text h3{
+    text-align: left;
+}
+.career-wrapper .career-text .section-btn{
+    text-align: left;
+}
+.career-wrapper .career-text .section-desc{
+    font-size: 1.1rem;
+}
+@media (max-width:992px) {
+    .career-wrapper {
+        padding: 0 5rem;
+        flex-direction: column;
+    }
+    .career-img {
+        order: 2;
+    }
+    .career-text {
+        order: 1;
+    }
+}
+@media (max-width:768px) {
+    .career-wrapper {
+        padding: 0 1rem;
+    }
+}
 /*========================== CHOOSE ============================*/
 .choose {
     text-align: center;
 }
-.choose h2 > p {
+.choose p {
     width: 60%;
     margin: auto;
     margin-bottom: 2rem;
@@ -749,9 +782,34 @@ ul {
 .cards {
     display: flex;
     justify-content: space-between;
+    text-align: center;
+}
+.card {
+    width: 100%;
+}
+.card i {
+    color: var(--COLOR-BLUE);
+    font-size: 2rem;
 }
 .card span{
+    font-size: 3rem;
     display: block;
+}
+@media (max-width:992px){
+    .choose p {
+        width: 80%;
+    }
+    .cards {
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 50%;
+    }
+}
+@media (max-width:540px) {
+    .choose p {
+        width: 100%;
+    }
 }
 /*========================== FOOTER ============================*/
 .footer {
