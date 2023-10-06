@@ -762,7 +762,7 @@ ul {
     transform: translateY(-50%);
 }
 .title {
-    font-size: 2rem;
+    font-size: 3rem;
     color: var(--COLOR-WHITE);
     text-transform: uppercase;
     font-weight: var(--FONT-REGULAR);
